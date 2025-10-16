@@ -74,6 +74,7 @@ Here:
     * `CONGESTED`
     * `SOLO`
     * `RANDOM`
+    * `PERFECT`
 
 <br>
 
