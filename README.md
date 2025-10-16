@@ -1,6 +1,5 @@
 # Bamboo-SMP (B-SMP)
 
-``
 The Stable Marriage Problem (SMP) is a combinatorial optimization problem aimed at creating stable pairings between two
 groups, traditionally referred to as men and women.
 SMP has been widely applied across various domains, including healthcare, education, and cloud computing, to optimize
@@ -19,13 +18,13 @@ algorithm, and its implementation in a hybrid environment of GPUs and CPUs.
 We have made three key development efforts to achieve high performance for Bamboo-SMP. First, Bamboo-SMP effectively
 exploits the data accessing locality with a lightweight data structure to maximize the **"shared residence
 space"**. Second, Bamboo-SMP employs an advanced hardware atomic operation to decrease execution latency with **"
-low contention"**. Third, Bamboo-SMP is implemented in a hybrid environment of GPU and CPU, leveraging the high
-bandwidth
+low contention"**. Third, Bamboo-SMP is implemented in a hybrid environment of GPU and CPU, leveraging the high bandwidth
 of the GPU for massive parallel operations and the low latency of CPU for fast sequential tasks. By fostering **"
 mutual complementarity"** between CPU and GPU, Bamboo-SMP attains superior performance, consistently exceeding the best
 existing methods by **6.69x to 21.44x** across a wide range of workloads.
 Moreover, Bamboo-SMP demonstrates excellent scalability, efficiently solving large-scale SMP instances while achieving
 sustained speedups of **5.6× to 13.8×** on 4 GPUs.
+
 
 ## Hardware Requirements
 
@@ -70,7 +69,6 @@ Here:
 
 * The first argument specifies the **size of the workload**.
 * The second argument specifies the **workload type**, which can be one of:
-
     * `CONGESTED`
     * `SOLO`
     * `RANDOM`
