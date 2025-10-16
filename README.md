@@ -26,9 +26,13 @@ existing methods by **6.69x to 21.44x** across a wide range of workloads.
 Moreover, Bamboo-SMP demonstrates excellent scalability, efficiently solving large-scale SMP instances while achieving
 sustained speedups of **5.6× to 13.8×** on 4 GPUs.
 
+<br>
+
 ## Hardware Requirements
 
 * At least one **NVIDIA GPU**
+
+<br>
 
 ## Software Requirements
 
@@ -40,9 +44,11 @@ Please ensure your system meets the following minimum software versions (greater
 * **GCC:** 11.4.0
 * **CMake:** 3.22.1
 
+<br>
+
 ## Setup & Execution
 
-To run **BambooSMP**, execute the following commands from the project root directory.
+``To run **BambooSMP**, execute the following commands from the project root directory.
 
 ### Build
 
@@ -68,6 +74,8 @@ Here:
     * `CONGESTED`
     * `SOLO`
     * `RANDOM`
+
+<br>
 
 ### Clean
 
