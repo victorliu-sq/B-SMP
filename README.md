@@ -48,7 +48,7 @@ Please ensure your system meets the following minimum software versions (greater
 
 ## Setup & Execution
 
-``To run **BambooSMP**, execute the following commands from the project root directory.
+To run **BambooSMP**, execute the following commands from the project root directory.
 
 ### Build
 
