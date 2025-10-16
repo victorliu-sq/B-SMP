@@ -18,19 +18,17 @@ algorithm, and its implementation in a hybrid environment of GPUs and CPUs.
 We have made three key development efforts to achieve high performance for Bamboo-SMP. First, Bamboo-SMP effectively
 exploits the data accessing locality with a lightweight data structure to maximize the **"shared residence
 space"**. Second, Bamboo-SMP employs an advanced hardware atomic operation to decrease execution latency with **"
-low contention"**. Third, Bamboo-SMP is implemented in a hybrid environment of GPU and CPU, leveraging the high bandwidth
+low contention"**. Third, Bamboo-SMP is implemented in a hybrid environment of GPU and CPU, leveraging the high
+bandwidth
 of the GPU for massive parallel operations and the low latency of CPU for fast sequential tasks. By fostering **"
 mutual complementarity"** between CPU and GPU, Bamboo-SMP attains superior performance, consistently exceeding the best
 existing methods by **6.69x to 21.44x** across a wide range of workloads.
 Moreover, Bamboo-SMP demonstrates excellent scalability, efficiently solving large-scale SMP instances while achieving
 sustained speedups of **5.6× to 13.8×** on 4 GPUs.
 
-
 ## Hardware Requirements
 
 * At least one **NVIDIA GPU**
-
----
 
 ## Software Requirements
 
@@ -42,8 +40,6 @@ Please ensure your system meets the following minimum software versions (greater
 * **GCC:** 11.4.0
 * **CMake:** 3.22.1
 
----
-
 ## Setup & Execution
 
 To run **BambooSMP**, execute the following commands from the project root directory.
@@ -51,11 +47,11 @@ To run **BambooSMP**, execute the following commands from the project root direc
 ### Build
 
 ```bash
-./runme.sh
+./scripts/runme.sh
 ```
 
 This script automatically downloads dependencies, installs them, and compiles the project.
-The compiled binary will be stored inside the `/bin/` directory.
+The compiled binary `bsmp_exe` will be stored inside the `bin/` directory.
 
 ### Run
 
@@ -72,3 +68,11 @@ Here:
     * `CONGESTED`
     * `SOLO`
     * `RANDOM`
+
+### Clean
+
+To reset the project directory to the initial state, run this script:
+
+```bash
+./scripts/clean.sh
+```

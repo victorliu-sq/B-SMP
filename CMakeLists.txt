@@ -30,7 +30,7 @@ find_package(glog 0.6.0 REQUIRED)
 find_package(benchmark 1.9.4 REQUIRED)
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--disable-new-dtags")
-et(CMAKE_BUILD_RPATH "${CMAKE_SOURCE_DIR}/third_party/lib")
+set(CMAKE_BUILD_RPATH "${CMAKE_SOURCE_DIR}/third_party/lib")
 set(CMAKE_INSTALL_RPATH "${CMAKE_SOURCE_DIR}/third_party/lib")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
