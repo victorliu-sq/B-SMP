@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.19)
 project(B-SMP
         LANGUAGES C CXX CUDA)
 
-
 # Output directories
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib") # output directory of static libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin") # output directory of shared libraries
@@ -42,4 +41,8 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # ================== Subdirectories ======================
 add_subdirectory(src)
-add_subdirectory(example)
+
+option(BSMP_BUILD_EXAMPLE "Build B-SMP example executables" OFF)
+if (BSMP_BUILD_EXAMPLE)
+    add_subdirectory(example)
+endif ()
