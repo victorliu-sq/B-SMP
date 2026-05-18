@@ -21,6 +21,7 @@ case "${WORKLOAD_TYPE}" in
     ;;
 esac
 
-# Run executable
 mkdir -p "${PROJECT_DIR}/tmp/logs"
-"${PROJECT_DIR}/build/bin/bsmp_exe" "${WORKLOAD_SIZE}" "${WORKLOAD_TYPE}"
+"${PROJECT_DIR}/build/bin/bsmp_exe" \
+  --workload_size="${WORKLOAD_SIZE}" \
+  --workload_type="${WORKLOAD_TYPE}"

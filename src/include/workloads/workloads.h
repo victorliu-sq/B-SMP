@@ -1,6 +1,7 @@
 #pragma once
 #include <thread>
 #include <random>
+#include <stdexcept>
 
 #include "common/stopwatch.h"
 #include "common/types.h"
@@ -15,6 +16,22 @@ namespace bsmp {
     WorkloadType type;
     int group_size = 5;
 
+    static auto ParseWorkloadType(const String& type_str) -> WorkloadType {
+      if (type_str == "RANDOM") {
+        return RANDOM;
+      }
+      if (type_str == "CONGESTED") {
+        return CONGESTED;
+      }
+      if (type_str == "SOLO") {
+        return SOLO;
+      }
+      if (type_str == "PERFECT") {
+        return PERFECT;
+      }
+      throw std::invalid_argument("invalid workload type: " + type_str);
+    }
+
     // ====== Constructor ======
     explicit SmpWorkload(int n_, WorkloadType type_,
                          bool use_cache = true, int group_size_ = 5)
@@ -27,6 +44,10 @@ namespace bsmp {
         GenerateWorkload();
       }
     }
+
+    explicit SmpWorkload(int n_, const String& type_,
+                         bool use_cache = true, int group_size_ = 5)
+      : SmpWorkload(n_, ParseWorkloadType(type_), use_cache, group_size_) {}
 
     // ====== Move Constructor ======
     SmpWorkload(SmpWorkload&& other) noexcept
