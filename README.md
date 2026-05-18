@@ -83,5 +83,5 @@ Here:
 To reset the project directory to the initial state, run this script:
 
 ```bash
-./scripts/clean.sh
+make clean
 ```
