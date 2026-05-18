@@ -34,6 +34,6 @@ int main(int argc, char** argv) {
   // 4. Run BsmpEngine on this SMP workload
   bsmp::Matching matching = bsmp::RunBsmp(wkld);
 
-  bsmp::operator<<(std::cout, matching);
+  std::cout<< matching;
   std::_Exit(0);
 }

@@ -27,21 +27,18 @@
 
 // ===================================================================================
 // host static methods
-// only visible to the this namespace
-namespace bsmp {
-  static uint64_t getNanoSecond() {
-    return std::chrono::high_resolution_clock::now().time_since_epoch().count();
+static uint64_t getNanoSecond() {
+  return std::chrono::high_resolution_clock::now().time_since_epoch().count();
+}
+
+inline std::ostream &operator<<(std::ostream &os, const bsmp::Matching &matching) {
+  std::ostringstream oss;
+  oss << "Final Matching Results:\n";
+
+  for (size_t m = 0; m < matching.size(); ++m) {
+    oss << "  Man M" << m << " ↔ Woman W" << matching[m] << "\n";
   }
 
-  inline std::ostream& operator<<(std::ostream& os, const bsmp::Matching& matching) {
-    std::ostringstream oss;
-    oss << "Final Matching Results:\n";
-
-    for (size_t m = 0; m < matching.size(); ++m) {
-      oss << "  Man M" << m << " ↔ Woman W" << matching[m] << "\n";
-    }
-
-    os << oss.str();
-    return os;
-  }
+  os << oss.str();
+  return os;
 }
