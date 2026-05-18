@@ -64,7 +64,7 @@ The compiled binary `bsmp_exe` will be stored at `build/bin/bsmp_exe`.
 Select the workload size and type when running `run_bsmp.sh`:
 
 ```bash
-./expr/run_bsmp.sh 20 CONGESTED
+./build/bin/bsmp_exe 20 CONGESTED
 ```
 
 Here:

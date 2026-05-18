@@ -5,6 +5,8 @@
 namespace bsmp {
   auto RunBsmp(const SmpWorkload& input) -> Matching {
     BsmpEngine engine(input);
-    return engine.Execute();
+    auto output = engine.Execute();
+    engine.PrintProfilingInfo();
+    return output;
   }
 }
