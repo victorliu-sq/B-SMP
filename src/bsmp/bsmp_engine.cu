@@ -1,7 +1,5 @@
 #include "bsmp/bsmp_engine.h"
-
 #include <set>
-
 #include "device/stream.h"
 #include "device/launcher.h"
 

@@ -22,6 +22,7 @@ if [[ ! -f "${GFLAGS_STAMP}" ]]; then
   mkdir -p build && cd build
 
   cmake -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
         -DCMAKE_INSTALL_PREFIX="${DEPS_DIR}" \
         -DCMAKE_BUILD_TYPE=Release \
         ..

@@ -50,21 +50,21 @@ Please ensure your system meets the following minimum software versions (greater
 
 To run **BambooSMP**, execute the following commands from the project root directory.
 
-### Build
+### Build And Run
 
 ```bash
-./scripts/runme.sh
+make all
 ```
 
-This script automatically downloads dependencies, installs them, and compiles the project.
-The compiled binary `bsmp_exe` will be stored inside the `bin/` directory.
+This downloads dependencies, installs them under `deps/`, compiles the project, and runs BambooSMP.
+The compiled binary `bsmp_exe` will be stored at `build/bin/bsmp_exe`.
 
-### Run
+### Select Workload
 
-Execute the BambooSMP engine using:
+Select the workload size and type when running `run_bsmp.sh`:
 
 ```bash
-./bin/bsmp_exe 10 CONGESTED
+./expr/run_bsmp.sh 20 CONGESTED
 ```
 
 Here:

@@ -22,6 +22,7 @@ if [[ ! -f "${GLOG_STAMP}" ]]; then
     cmake \
       -DBUILD_SHARED_LIBS=ON \
       -DWITH_GTEST=OFF \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -DCMAKE_INSTALL_PREFIX="${DEPS_DIR}" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH="${DEPS_DIR}" \

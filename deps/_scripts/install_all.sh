@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+COMMON_FILE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common.sh"
+source "${COMMON_FILE}"
+
 # --- Installation Config
-export DEPS_DIR="${PROJECT_DIR}/third_party"
+export DEPS_DIR="${PROJECT_DIR}/deps"
 export DEPS_TMP_DIR="${DEPS_DIR}/tmp"
-INSTALL_DIR="${SCRIPTS_DIR}/install"
+INSTALL_DIR="${SCRIPTS_DIR}"
 
 mkdir -p \
   "${DEPS_DIR}" \
@@ -26,4 +29,4 @@ bash "${INSTALL_DIR}/install_gbenchmark.sh"
 #echo "[INFO] LD_LIBRARY_PATH set to: $LD_LIBRARY_PATH"
 
 # remove the tmp directory
-rm -rf ${DEPS_TMP_DIR}
+rm -rf "${DEPS_TMP_DIR}"

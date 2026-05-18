@@ -5,7 +5,7 @@ GBM_VER="1.9.4"
 GBM_STAMP="${DEPS_DIR}/.stamp-benchmark"
 
 if [[ ! -f "${GBM_STAMP}" ]]; then
-  echo "[google-benchmark] Installing benchmark v${GBM_STAMP} to ${DEPS_DIR} ..."
+  echo "[google-benchmark] Installing benchmark v${GBM_VER} to ${DEPS_DIR} ..."
   pushd "${DEPS_TMP_DIR}" >/dev/null
 
   TARBALL="benchmark-${GBM_VER}.tar.gz"
@@ -22,6 +22,8 @@ if [[ ! -f "${GBM_STAMP}" ]]; then
     cmake \
       -DBUILD_SHARED_LIBS=ON \
       -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on \
+      -DBENCHMARK_ENABLE_TESTING=OFF \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -DCMAKE_INSTALL_PREFIX="${DEPS_DIR}" \
       -DCMAKE_BUILD_TYPE=Release \
       ..

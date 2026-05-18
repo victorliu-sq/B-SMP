@@ -6,7 +6,7 @@ GTEST_VER="1.17.0"
 GTEST_STAMP="${DEPS_DIR}/.stamp-googletest"
 
 if [[ ! -f "${GTEST_STAMP}" ]]; then
-  echo "[google-test] Installing googletest v${GTEST_STAMP} to ${DEPS_DIR} ..."
+  echo "[google-test] Installing googletest v${GTEST_VER} to ${DEPS_DIR} ..."
   pushd "${DEPS_TMP_DIR}" >/dev/null
 
   TARBALL="googletest-${GTEST_VER}.tar.gz"
@@ -23,6 +23,7 @@ if [[ ! -f "${GTEST_STAMP}" ]]; then
     cmake \
       -DBUILD_SHARED_LIBS=ON \
       -DWITH_GTEST=OFF \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -DCMAKE_INSTALL_PREFIX="${DEPS_DIR}" \
       -DCMAKE_BUILD_TYPE=Release \
       ..

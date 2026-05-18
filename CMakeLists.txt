@@ -3,6 +3,12 @@ cmake_minimum_required(VERSION 3.19)
 project(B-SMP
         LANGUAGES C CXX CUDA)
 
+
+# Output directories
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib") # output directory of static libraries
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin") # output directory of shared libraries
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin") # output directory of executables
+
 # ================== C++ Compiling Flags ======================
 # set c++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -22,7 +28,7 @@ set(CMAKE_CUDA_FLAGS_RELEASE "-w -Wno-deprecated-gpu-targets -O3")
 set(CMAKE_CUDA_FLAGS_DEBUG "-G -g -Wall -Wextra -O0")
 
 # ================== Dependencies ======================
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/third_party")
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/deps")
 
 find_package(GTest 1.15.0 REQUIRED) # Notice the GT
 find_package(gflags 2.2.2 REQUIRED)
@@ -30,8 +36,8 @@ find_package(glog 0.6.0 REQUIRED)
 find_package(benchmark 1.9.4 REQUIRED)
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--disable-new-dtags")
-set(CMAKE_BUILD_RPATH "${CMAKE_SOURCE_DIR}/third_party/lib")
-set(CMAKE_INSTALL_RPATH "${CMAKE_SOURCE_DIR}/third_party/lib")
+set(CMAKE_BUILD_RPATH "${CMAKE_SOURCE_DIR}/deps/lib")
+set(CMAKE_INSTALL_RPATH "${CMAKE_SOURCE_DIR}/deps/lib")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # ================== Subdirectories ======================
